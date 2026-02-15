@@ -1,0 +1,21 @@
+{
+  "appId": "com.poya.medplantai",
+  "productName": "POYA - MEDPLANTAi",
+  "directories": {
+    "output": "dist-electron/release",
+    "buildResources": "public"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*"
+  ],
+  "mac": {
+    "target": "dmg"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": "AppImage"
+  }
+}

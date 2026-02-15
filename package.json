@@ -1,0 +1,38 @@
+{
+  "name": "medplantai-website",
+  "private": true,
+  "version": "0.1.0",
+  "main": "dist-electron/index.js",
+  "author": "POYA - MEDPLANTAi",
+  "description": "POYA - MEDPLANTAi - پل هوشمند بین طبیعت و پزشکی",
+  "scripts": {
+    "dev": "npm run electron:dev",
+    "build": "npm run electron:build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"vite\" \"vite build -c vite.main.config.ts --watch\" \"wait-on tcp:5173 && electron .\"",
+    "electron:build": "vite build && vite build -c vite.main.config.ts",
+    "electron:dist": "npm run electron:build && electron-builder"
+  },
+  "dependencies": {
+    "@google/genai": "^1.41.0",
+    "framer-motion": "^12.34.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.13.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0",
+    "wait-on": "^7.2.0"
+  }
+}
